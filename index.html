@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Marwan Hakim | Portfolio & Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- JS Feature #1: Reading Progress Bar -->
+    <div id="progress-bar" aria-hidden="true"></div>
+
+    <header class="navbar">
+        <div class="logo">
+    <a href="#home" class="logo-link">
+        <img src="Images\profile.png" alt="Marwan Hakim" class="nav-profile-img">
+        <span class="logo-text">Marwan Hakim</span>
+    </a></div>
+        
+        <!-- Navigation -->
+        <nav aria-label="Main Navigation">
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" class="nav-item">Home</a></li>
+                <li><a href="#about" class="nav-item">About Me</a></li>
+                <li><a href="#projects" class="nav-item">Projects</a></li>
+                <li><a href="#experience" class="nav-item">Experience</a></li>
+                <li><a href="#skills" class="nav-item">Skills</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="nav-actions">
+            <!-- JS Feature #2: Dark/Light Theme Toggle -->
+            <button id="theme-toggle" aria-label="Toggle light/dark theme">🌙</button>
+            
+            <!-- JS Feature #3: Mobile Hamburger Menu -->
+            <button id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero / Home Section -->
+<section id="home" class="hero-section">
+    <div class="hero-container">
+        <!-- Hero Image -->
+        <div class="hero-image-wrapper">
+            <img src="Images\Hero image 2.png" alt="Muhammad Marwan Hakim" class="hero-profile-img">
+        </div>
+        
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+            <h1>Hello, I'm <span class="highlight">Muhammad Marwan Hakim</span></h1>
+            <p class="subtitle">I am a <span id="typing-text"></span><span class="cursor">|</span></p>
+            <p class="location">📍 Kuching, Sarawak, Malaysia</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary-btn">View My Projects</a>
+                <a href="#contact" class="btn secondary-btn">Get In Touch</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- About Me Section -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>3rd year Computer Science student majoring in <strong>Multimedia Computing</strong> at Universiti Malaysia Sarawak (UNIMAS).</p>
+                    <p>My technical background spans to software development, web application design, technical support, and multimedia solutions. I enjoy building interactive user-centered applications and resolving technical challenges efficiently.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section (5 Detailed Projects) -->
+        <!-- Projects Section -->
+<section id="projects" class="section">
+    <h2>Featured Projects</h2>
+
+    <!-- Category Filter Buttons -->
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="games">Games & C++</button>
+        <button class="filter-btn" data-filter="java">Java & GUI</button>
+        <button class="filter-btn" data-filter="python">Python CLI</button>
+        <button class="filter-btn" data-filter="web">Web & Database</button>
+    </div>
+
+    <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card" data-category="games">
+            <div class="card-image-wrapper">
+                <button class="preview-btn" aria-expanded="false">▶ LOAD PREVIEWS</button>
+                <div class="gallery-container hidden-gallery">
+                    <button class="slide-btn prev-btn" aria-label="Previous image">❮</button>
+                    <div class="gallery-slides">
+                        <img src="Images\Project 1 start.png" alt="Urban Defenders Start Screen" class="gallery-img active">
+                        <img src="Images\Project 1 gameplay.png" alt="Urban Defenders Gameplay" class="gallery-img">
+                        <img src="Images\Project 1 game over.png" alt="Urban Defenders Game Over" class="gallery-img">
+                        <img src="Images\Project 1 win screen.png" alt="Urban Defenders Win Screen" class="gallery-img">
+                    </div>
+                    <button class="slide-btn next-btn" aria-label="Next image">❯</button>
+                    <span class="slide-counter">1 / 4</span>
+                </div>
+            </div>
+            <div class="card-header">
+                <h3>Urban Defenders</h3>
+                <span class="badge">C++ / Game Dev</span>
+            </div>
+            <p>A C++-based 2D 8-bit game featuring custom player mechanics, stage rendering, and obstacle handling.</p>
+            <div class="card-tags">
+                <span>C++</span>
+                <span>2D Gaming</span>
+                <span>UNIMAS</span>
+            </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" data-category="java">
+            <div class="card-image-wrapper">
+                <button class="preview-btn" aria-expanded="false">▶ LOAD PREVIEWS</button>
+                <div class="gallery-container hidden-gallery">
+                    <button class="slide-btn prev-btn" aria-label="Previous image">❮</button>
+                    <div class="gallery-slides">
+                        <img src="Images\Project 2 Dashboard.png" alt="Gamified Education Dashboard" class="gallery-img active">
+                        <img src="Images\Project 2 quiz module.png" alt="Gamified Education Quiz Module" class="gallery-img">
+                        <img src="Images\Project 2 score.png" alt="Gamified Education Score Analytics" class="gallery-img">
+                    </div>
+                    <button class="slide-btn next-btn" aria-label="Next image">❯</button>
+                    <span class="slide-counter">1 / 3</span>
+                </div>
+            </div>
+            <div class="card-header">
+                <h3>Gamified Education App</h3>
+                <span class="badge">Java / GUI</span>
+            </div>
+            <p>A Java-based GUI application created for interactive educational management and quiz evaluation.</p>
+            <div class="card-tags">
+                <span>Java</span>
+                <span>Java Swing</span>
+                <span>OOP</span>
+            </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card" data-category="python">
+            <div class="card-image-wrapper">
+                <button class="preview-btn" aria-expanded="false">▶ LOAD PREVIEWS</button>
+                <div class="gallery-container hidden-gallery">
+                    <button class="slide-btn prev-btn" aria-label="Previous image">❮</button>
+                    <div class="gallery-slides">
+                        <img src="Images\Project 3 main menu.png" alt="Smart Team Platform Main Menu" class="gallery-img active">
+                        <img src="Images\Project 3 task management.png" alt="Smart Team Platform Task Scheduler" class="gallery-img">
+                    </div>
+                    <button class="slide-btn next-btn" aria-label="Next image">❯</button>
+                    <span class="slide-counter">1 / 2</span>
+                </div>
+            </div>
+            <div class="card-header">
+                <h3>Smart Team Platform</h3>
+                <span class="badge">Python CLI</span>
+            </div>
+            <p>A Python CLI platform designed to streamline student team collaboration and task management.</p>
+            <div class="card-tags">
+                <span>Python</span>
+                <span>CLI</span>
+                <span>Data Structs</span>
+            </div>
+        </article>
+
+        <!-- Project 4 -->
+        <article class="project-card" data-category="web">
+            <div class="card-image-wrapper">
+                <button class="preview-btn" aria-expanded="false">▶ LOAD PREVIEWS</button>
+                <div class="gallery-container hidden-gallery">
+                    <button class="slide-btn prev-btn" aria-label="Previous image">❮</button>
+                    <div class="gallery-slides">
+                        <img src="Images\Project 4 image 1.jpg" alt="Data Solutions Web Homepage" class="gallery-img active">
+                        <img src="Images\Project 4 image 2.png" alt="Data Solutions Digital Posters" class="gallery-img">
+                    </div>
+                    <button class="slide-btn next-btn" aria-label="Next image">❯</button>
+                    <span class="slide-counter">1 / 2</span>
+                </div>
+            </div>
+            <div class="card-header">
+                <h3>Web & Digital Media</h3>
+                <span class="badge">Web / Media</span>
+            </div>
+            <p>Collaborative web development project created during internship work at Data Solutions Sarawak.</p>
+            <div class="card-tags">
+                <span>HTML/CSS</span>
+                <span>JavaScript</span>
+                <span>Graphics</span>
+            </div>
+        </article>
+
+        <!-- Project 5 -->
+        <article class="project-card" data-category="web">
+            <div class="card-image-wrapper">
+                <button class="preview-btn" aria-expanded="false">▶ LOAD PREVIEWS</button>
+                <div class="gallery-container hidden-gallery">
+                    <button class="slide-btn prev-btn" aria-label="Previous image">❮</button>
+                    <div class="gallery-slides">
+                        <img src="Images\Project 5 1.png" alt="Online Auction Database Record View" class="gallery-img active">
+                        <img src="Images\Project 5 2.png" alt="Online Auction Database Insert Form" class="gallery-img">
+                        <img src="Images\Project 5 3.png" alt="Online Auction Database Edit Panel" class="gallery-img">
+                    </div>
+                    <button class="slide-btn next-btn" aria-label="Next image">❯</button>
+                    <span class="slide-counter">1 / 3</span>
+                </div>
+            </div>
+            <div class="card-header">
+                <h3>Online Auction Database system</h3>
+                <span class="badge">Full-Stack</span>
+            </div>
+            <p>Database management web application featuring full Create, Read, Update, and Delete operations.</p>
+            <div class="card-tags">
+                <span>PHP</span>
+                <span>MySQL</span>
+                <span>MariaDB</span>
+            </div>
+        </article>
+    </div>
+
+    <!-- Image Modal Lightbox with Fullscreen Navigation -->
+<div id="image-modal" class="modal" aria-hidden="true" role="dialog" aria-label="Full screen image preview">
+    <span class="modal-close" id="modal-close">&times;</span>
+    <button class="modal-nav modal-prev" id="modal-prev" aria-label="Previous image">❮</button>
+    <div class="modal-container">
+        <img class="modal-content" id="modal-img" alt="Full View Screenshot">
+        <div id="modal-caption" class="modal-caption"></div>
+    </div>
+    <button class="modal-nav modal-next" id="modal-next" aria-label="Next image">❯</button>
+</div>
+</section>
+
+        <!-- Work Experience & Education Section -->
+        <section id="experience" class="section">
+            <h2>Experience & Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Universiti Malaysia Sarawak (UNIMAS)</h3>
+                    <p class="timeline-role">Student | Oct 2026 - Present</p>
+                    <p>Kota Samarahan, Sarawak, Malaysia</p>
+                    <p>Developing team-based C++ 2D games, Java GUI platforms, and Python collaboration tools.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Empayar Setia Sdn Bhd</h3>
+                    <p class="timeline-role">Technical Support Assistant | Jun 2024 - Sep 2024</p>
+                    <p>Kuching, Sarawak, Malaysia</p>
+                    <p>Solved general computer hardware/software issues daily and maintained digital documentation and file organization.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Data Solutions Sarawak</h3>
+                    <p class="timeline-role">Student Intern | Sep 2023 - Mar 2024</p>
+                    <p>Kuching, Sarawak, Malaysia</p>
+                    <p>Performed digital tagging, video editing, digital poster creation, and collaborative web development.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Education</h3>
+                    <p><strong>B.CS. (Hons) Multimedia Computing</strong> – UNIMAS (Sep 2024 - Jul 2028)</p>
+                    <p><strong>Diploma in Computer Science</strong> – Universiti Teknologi MARA (UiTM) (Oct 2021 - Mar 2024)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section with JS Feature #6: Dynamic Skill Bars -->
+        <section id="skills" class="section">
+            <h2>Technical Skills & Languages</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <span class="skill-label">Web Development (HTML, CSS, JavaScript)</span>
+                    <div class="progress-container"><div class="progress-bar-fill" data-progress="88%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Programming (Java, C++, Python, PHP)</span>
+                    <div class="progress-container"><div class="progress-bar-fill" data-progress="85%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Technical Support & Troubleshooting</span>
+                    <div class="progress-container"><div class="progress-bar-fill" data-progress="90%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Digital Media & Poster Creation / Video Editing</span>
+                    <div class="progress-container"><div class="progress-bar-fill" data-progress="82%"></div></div>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-label">Languages (English & Malay - Native/Bilingual)</span>
+                    <div class="progress-container"><div class="progress-bar-fill" data-progress="95%"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:paradaxehakim143@gmail.com">paradaxehakim143@gmail.com</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/muhammad-marwan-hakim-bin-abdul-malik-b51567373" target="_blank" rel="noopener">Muhammad Marwan Hakim</a></p>
+                </div>
+
+                <!-- JS Feature #7: Interactive Contact Form Validation & Submission -->
+                <form id="contact-form" class="contact-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Full Name">
+                        <span class="error-msg" id="name-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="you@example.com">
+                        <span class="error-msg" id="email-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+                        <span class="error-msg" id="message-error"></span>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Send Message</button>
+                    <div id="form-status" class="form-status" aria-live="polite"></div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- JS Feature #8: Back to Top Floating Button -->
+    <button id="back-to-top" aria-label="Scroll back to top">↑</button>
+
+    <footer>
+        <!-- JS Feature #9: Dynamic Copyright Year -->
+        <p>&copy; <span id="year"></span> Muhammad Marwan Hakim. Built with vanilla HTML, CSS, and JavaScript.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
