@@ -446,6 +446,8 @@ body::before {
 }
 
 .form-group input, .form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
     padding: 0.85rem;
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -462,10 +464,11 @@ body::before {
 }
 
 .error-msg {
+    display: block; /* Forces error message below the input box */
     color: var(--accent);
     font-size: 0.85rem;
     font-family: var(--font-heading);
-    margin-top: 0.2rem;
+    margin-top: 0.3rem;
 }
 
 .form-status {

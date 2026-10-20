@@ -117,48 +117,74 @@ document.addEventListener("DOMContentLoaded", () => {
 
     skillBars.forEach(bar => skillObserver.observe(bar));
 
-    // ----------------------------------------------------
-    // JS Feature #7: Form Input Validation & Submission Handler
-    // ----------------------------------------------------
-    const contactForm = document.getElementById("contact-form");
-    const formStatus = document.getElementById("form-status");
+// ----------------------------------------------------
+// JS Feature #7: Interactive Contact Form Validation & Submission
+// ----------------------------------------------------
+const contactForm = document.getElementById("contact-form");
 
+if (contactForm) {
     contactForm.addEventListener("submit", (e) => {
+        // Always stop standard POST submission
         e.preventDefault();
-        
+
         const nameInput = document.getElementById("name");
         const emailInput = document.getElementById("email");
         const messageInput = document.getElementById("message");
+
+        const nameError = document.getElementById("name-error");
+        const emailError = document.getElementById("email-error");
+        const messageError = document.getElementById("message-error");
+        const formStatus = document.getElementById("form-status");
+
         let isValid = true;
 
-        // Clear previous error messages
-        document.querySelectorAll(".error-msg").forEach(el => el.textContent = "");
+        // Reset error messages
+        if (nameError) nameError.textContent = "";
+        if (emailError) emailError.textContent = "";
+        if (messageError) messageError.textContent = "";
+        if (formStatus) formStatus.textContent = "";
 
-        if (!nameInput.value.trim()) {
-            document.getElementById("name-error").textContent = "Name is required.";
+        // 1. Name Check
+        const nameVal = nameInput ? nameInput.value.trim() : "";
+        if (!nameVal) {
+            if (nameError) nameError.textContent = "Please enter your name.";
             isValid = false;
         }
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+\$/;
-        if (!emailRegex.test(emailInput.value.trim())) {
-            document.getElementById("email-error").textContent = "Enter a valid email address.";
+        // 2. Email Check
+        const emailVal = emailInput ? emailInput.value.trim() : "";
+        
+        // Bulletproof check: Ensures non-empty, contains '@', contains '.', and no trailing spaces
+        if (!emailVal) {
+            if (emailError) emailError.textContent = "Please enter your email.";
+            isValid = false;
+        } else if (!emailVal.includes("@") || !emailVal.includes(".") || emailVal.length < 5) {
+            if (emailError) emailError.textContent = "Please enter a valid email address.";
             isValid = false;
         }
 
-        if (!messageInput.value.trim()) {
-            document.getElementById("message-error").textContent = "Message cannot be empty.";
+        // 3. Message Check
+        const messageVal = messageInput ? messageInput.value.trim() : "";
+        if (!messageVal) {
+            if (messageError) messageError.textContent = "Please enter a message.";
             isValid = false;
         }
 
+        // 4. Trigger Mail Client on Valid Input
         if (isValid) {
-            formStatus.style.color = "#22c55e";
-            formStatus.textContent = "Thank you! Your message has been sent successfully.";
-            contactForm.reset();
-        } else {
-            formStatus.style.color = "#ef4444";
-            formStatus.textContent = "Please fix the errors above.";
+            const recipient = "paradaxehakim143@gmail.com";
+            const subject = encodeURIComponent(`Portfolio Message from ${nameVal}`);
+            const body = encodeURIComponent(`Name: ${nameVal}\nEmail: ${emailVal}\n\nMessage:\n${messageVal}`);
+
+            if (formStatus) {
+                formStatus.style.color = "var(--text-primary)";
+                formStatus.textContent = "Opening email application...";
+            }
+
+            window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
         }
     });
+}
 
     // ----------------------------------------------------
     // JS Feature #8: Back to Top Button
